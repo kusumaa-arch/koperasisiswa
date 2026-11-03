@@ -1,72 +1,71 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Koperasi Siswa Syariah</title>
+@extends('layouts.app')
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+@section('title', 'Tentang Kami | Koperasi Siswa Syariah')
+@section('header_class', 'solid')
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<header>
-
-    <div class="logo">
-        <img src="images/logo1.png" alt="Logo">
-        <img src="images/logo2.png" alt="Logo">
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="operational.html">Operational</a></li>
-        </ul>
-    </nav>
-
-</header>
-
+@section('content')
 
 <section class="about-container">
-
-    <div class="about-image">
-
-        <img src="images/about.jpg" alt="Koperasi">
-
+    <div class="about-image reveal">
+        <img src="{{ asset('images/about.jpg') }}" alt="Koperasi Siswa Syariah"
+             onerror="this.onerror=null;this.src='https://placehold.co/800x600/e8f3e8/1b5e32?text=Kopsis+Skansaba'">
     </div>
 
-    <div class="about-content">
-
-        <span>TENTANG KAMI</span>
-
+    <div class="about-content reveal d1">
+        <span class="eyebrow" data-id="TENTANG KAMI" data-en="ABOUT US">TENTANG KAMI</span>
         <h2>Koperasi Siswa Syariah</h2>
 
-        <p>
-            Koperasi Siswa Syariah SMK Negeri 1 Bantul merupakan koperasi
-            sekolah yang menyediakan berbagai kebutuhan warga sekolah
-            dengan mengutamakan pelayanan yang profesional, amanah,
-            dan sesuai prinsip syariah.
+        <p data-id="Koperasi Siswa Syariah SMK Negeri 1 Bantul merupakan koperasi sekolah yang menyediakan berbagai kebutuhan warga sekolah dengan mengutamakan pelayanan yang profesional, amanah, dan sesuai prinsip syariah."
+           data-en="The Sharia Student Cooperative of SMK Negeri 1 Bantul is a school cooperative that provides the needs of the school community, prioritizing professional, trustworthy service in line with sharia principles.">
+            Koperasi Siswa Syariah SMK Negeri 1 Bantul merupakan koperasi sekolah yang menyediakan berbagai kebutuhan warga sekolah dengan mengutamakan pelayanan yang profesional, amanah, dan sesuai prinsip syariah.
         </p>
 
-        <p>
-            Selain menyediakan kebutuhan siswa, koperasi juga menjadi
-            sarana pembelajaran kewirausahaan agar peserta didik mampu
-            mengembangkan jiwa bisnis, tanggung jawab, dan kerja sama.
+        <p data-id="Selain menyediakan kebutuhan siswa, koperasi juga menjadi sarana pembelajaran kewirausahaan agar peserta didik mampu mengembangkan jiwa bisnis, tanggung jawab, dan kerja sama."
+           data-en="Besides providing student needs, the cooperative is also a learning platform for entrepreneurship so students can develop business spirit, responsibility, and teamwork.">
+            Selain menyediakan kebutuhan siswa, koperasi juga menjadi sarana pembelajaran kewirausahaan agar peserta didik mampu mengembangkan jiwa bisnis, tanggung jawab, dan kerja sama.
         </p>
 
+        <div class="values">
+            <div class="value"><i class="fa-solid fa-handshake"></i><span data-id="Amanah" data-en="Trustworthy">Amanah</span></div>
+            <div class="value"><i class="fa-solid fa-star-and-crescent"></i><span data-id="Syariah" data-en="Sharia">Syariah</span></div>
+            <div class="value"><i class="fa-solid fa-seedling"></i><span data-id="Kewirausahaan" data-en="Entrepreneurship">Kewirausahaan</span></div>
+        </div>
     </div>
-
 </section>
 
+<section class="section about-extra">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow" data-id="Profil Singkat" data-en="Quick Profile">Profil Singkat</span>
+            <h2 class="title" data-id="Mengenal Kopsis Lebih Dekat" data-en="Get to Know Kopsis Closer">Mengenal Kopsis Lebih Dekat</h2>
+        </div>
 
-<footer>
+        <div class="info-cards three">
+            <div class="info-card reveal">
+                <i class="fa-solid fa-users"></i>
+                <strong data-id="Pengelola" data-en="Managers">Pengelola</strong>
+                <small data-id="Siswa anggota organisasi Kopsis" data-en="Student members of Kopsis">Siswa anggota organisasi Kopsis</small>
+            </div>
+            <div class="info-card reveal d1">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <strong data-id="Guru Pembina" data-en="Advisors">Guru Pembina</strong>
+                <small>Ibu Ririh Damayanti & Ibu Suratimah</small>
+            </div>
+            <div class="info-card reveal d2">
+                <i class="fa-solid fa-bullseye"></i>
+                <strong data-id="Tujuan" data-en="Goal">Tujuan</strong>
+                <small data-id="Mendukung pelaksanaan ekonomi syariah" data-en="Supporting the implementation of sharia economy">Mendukung pelaksanaan ekonomi syariah</small>
+            </div>
+        </div>
 
-    <p>© 2026 Koperasi Siswa Syariah SMK Negeri 1 Bantul</p>
+        <p class="program-note reveal">
+            <i class="fa-solid fa-award"></i>
+            <span data-id="Dibentuk sebagai wujud pelaksanaan Program Sekolah Pelopor Ekonomi Syariah oleh Komite Nasional Ekonomi dan Keuangan Syariah melalui Dikpora DIY."
+                  data-en="Established as part of the Sharia Economy Pioneer School Program by the National Committee for Sharia Economy and Finance through Dikpora DIY.">
+                Dibentuk sebagai wujud pelaksanaan Program Sekolah Pelopor Ekonomi Syariah oleh Komite Nasional Ekonomi dan Keuangan Syariah melalui Dikpora DIY.
+            </span>
+        </p>
+    </div>
+</section>
 
-</footer>
-
-</body>
+@endsection
