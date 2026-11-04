@@ -9,8 +9,7 @@ class PageController extends Controller
     public function home(): View
     {
         return view('home', [
-            // Mengirim 4 data kategori khusus untuk preview di halaman utama
-            'products' => $this->homeCategoryPreviews(),
+            'categories' => $this->categoryData(),
         ]);
     }
 
@@ -23,7 +22,7 @@ class PageController extends Controller
     {
         return view('products', [
             'categories' => $this->categoryData(),
-            'products' => $this->productData(), // Halaman produk tetap menggunakan data lengkap ini
+            'products' => $this->productData(),
         ]);
     }
 
@@ -46,39 +45,6 @@ class PageController extends Controller
     }
 
     /**
-     * Data khusus untuk 4 kotak kategori di Halaman Utama (Homepage)
-     */
-    private function homeCategoryPreviews(): array
-    {
-        return [
-            [
-                'name' => 'Alat Tulis', 
-                'name_en' => 'Stationery', 
-                'cat' => 'alat-tulis', 
-                'img' => 'alat-tulis.jpg' // Pastikan file gambar ini ada di folder public/images/
-            ],
-            [
-                'name' => 'Perlengkapan Sekolah', 
-                'name_en' => 'School Supplies', 
-                'cat' => 'perlengkapan', 
-                'img' => 'perlengkapan-sekolah.jpg'
-            ],
-            [
-                'name' => 'Makanan Ringan', 
-                'name_en' => 'Snacks', 
-                'cat' => 'makanan', 
-                'img' => 'makanan-ringan.jpg'
-            ],
-            [
-                'name' => 'Minuman', 
-                'name_en' => 'Drinks', 
-                'cat' => 'minuman', 
-                'img' => 'minuman.jpg'
-            ],
-        ];
-    }
-
-    /**
      * @return list<array{name: string, name_en: string, price: int, price_max?: int, cat: string, img: string}>
      */
     private function productData(): array
@@ -93,7 +59,7 @@ class PageController extends Controller
             ['name' => 'Pensil Faber-Castell', 'name_en' => 'Faber-Castell Pencil', 'price' => 4000, 'cat' => 'alat-tulis', 'img' => 'fbcastellpensil.jpg'],
             ['name' => 'Pensil Warna', 'name_en' => 'Colored Pencils', 'price' => 10000, 'cat' => 'alat-tulis', 'img' => 'pewarna.png'],
             ['name' => 'Rautan', 'name_en' => 'Pencil Sharpener', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'rautan.png'],
-            ['name' => 'Penggaris', 'name_en' => 'Ruler', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'penggaris.png'],
+            ['name' => 'Penggaris', 'name_en' => 'Ruler', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'penggaris.jpg'],
             ['name' => 'Lem Joyko', 'name_en' => 'Joyko Glue', 'price' => 3000, 'cat' => 'alat-tulis', 'img' => 'gluejoyko.png'],
             ['name' => 'Lem Kenko', 'name_en' => 'Kenko Glue', 'price' => 3500, 'cat' => 'alat-tulis', 'img' => 'gluekenko.png'],
             ['name' => 'Alat Tulis Hitech', 'name_en' => 'Hitech Stationery', 'price' => 5000, 'cat' => 'alat-tulis', 'img' => 'hitech.png'],

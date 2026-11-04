@@ -50,35 +50,32 @@
 </section>
 
 {{-- ============ PRODUCTS PREVIEW ============ --}}
-<section class="section products-preview">
+<section class="section products-preview" id="katalog">
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow" data-id="Katalog Produk" data-en="Product Catalog">Katalog Produk</span>
             <h2 class="title" data-id="Temukan berbagai kebutuhanmu di Kopsis Skansaba Syariah!" data-en="Find everything you need at Kopsis Skansaba Syariah!">Temukan berbagai kebutuhanmu di Kopsis Skansaba Syariah!</h2>
         </div>
 
-        <div class="product-layout">
-            <div class="product-grid">
-                @foreach ($products as $product)
-                    <div class="product-card reveal">
-                        <div class="product-image">
-                            <img src="{{ $product['img'] ? asset('storage/' . $product['img']) : asset('images/default-product.png') }}" 
-                                 alt="{{ $product['name'] }}"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/400x400/e8f3e8/1b5e32?text={{ urlencode($product['name']) }}'">
-                        </div>
-<br>
-                        <div class="product-info">
-                            <h3>{{ $product['name'] }}</h3>
-                            <br>
-                            {{-- Mengganti harga dengan tautan "Lihat selengkapnya" --}}
-                            <a href="{{ route('products') }}" class="product-link-more">
-                                <span data-id="Lihat selengkapnya" data-en="See more">Lihat selengkapnya</span> 
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
+        <div class="category-grid">
+            @foreach ($categories as $key => [$name, $nameEn])
+                <article class="category-card reveal">
+                    <a class="category-card-art" href="{{ route('products', ['category' => $key]) }}#katalog">
+                        <span data-id="{{ $name }}" data-en="{{ $nameEn }}">{{ $name }}</span>
+                    </a>
+                    <div class="category-card-content">
+                        <h3 data-id="{{ $name }}" data-en="{{ $nameEn }}">{{ $name }}</h3>
+                        <a class="category-card-link" href="{{ route('products', ['category' => $key]) }}#katalog">
+                            <span data-id="Lihat selengkapnya" data-en="See more">Lihat selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
-                @endforeach
-            </div>
+                </article>
+            @endforeach
+        </div>
+
+    </div>
+</section>
 
 {{-- ============ OPERATIONAL PREVIEW ============ --}}
 <section class="section">

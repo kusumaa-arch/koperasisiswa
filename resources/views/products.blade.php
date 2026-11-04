@@ -12,7 +12,7 @@
     </div>
 </section>
 
-<section class="section products-page">
+<section class="section products-page" id="katalog">
     <div class="container">
         <div class="filters" id="filters">
             <button type="button" class="chip active" data-filter="all"><span data-id="Semua" data-en="All">Semua</span></button>

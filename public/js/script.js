@@ -41,7 +41,12 @@
         };
 
         window.addEventListener('scroll', update, { passive: true });
-        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        toTop.addEventListener('click', scrollToTop);
+        document.querySelectorAll('[data-scroll-top]').forEach((button) => {
+            button.addEventListener('click', scrollToTop);
+        });
         update();
     }
 
@@ -85,20 +90,30 @@
         const chips = document.querySelectorAll('#filters .chip');
         const cards = document.querySelectorAll('#productGrid .product-card');
 
-        chips.forEach((chip) => {
-            chip.addEventListener('click', () => {
-                chips.forEach((other) => other.classList.toggle('active', other === chip));
+        const applyFilter = (filter) => {
+            const selectedChip = Array.from(chips).find((chip) => chip.dataset.filter === filter);
+            if (!selectedChip) {
+                return;
+            }
 
-                const filter = chip.dataset.filter;
-                cards.forEach((card) => {
-                    const isVisible = filter === 'all' || card.dataset.cat === filter;
-                    card.classList.toggle('hide', !isVisible);
-                    if (isVisible) {
-                        card.classList.add('in');
-                    }
-                });
+            chips.forEach((chip) => chip.classList.toggle('active', chip === selectedChip));
+            cards.forEach((card) => {
+                const isVisible = filter === 'all' || card.dataset.cat === filter;
+                card.classList.toggle('hide', !isVisible);
+                if (isVisible) {
+                    card.classList.add('in');
+                }
             });
+        };
+
+        chips.forEach((chip) => {
+            chip.addEventListener('click', () => applyFilter(chip.dataset.filter));
         });
+
+        const requestedFilter = new URLSearchParams(window.location.search).get('category');
+        if (requestedFilter) {
+            applyFilter(requestedFilter);
+        }
     }
 
     /* Ganti bahasa ID / EN */

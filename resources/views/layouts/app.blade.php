@@ -77,18 +77,14 @@
         </div>
 
         <div class="f-nav">
-    <h6 data-id="Navigasi Singkat" data-en="Navigation">Navigasi</h6>
-    <div class="nav-links">
-        <a href="{{ route('home') }}" data-id="Beranda" data-en="Home">Beranda</a>
-        <a href="{{ route('operational') }}" data-id="Operasional" data-en="Operational">Operasional</a>
-        <a href="{{ route('about') }}" data-id="Tentang Kami" data-en="About Us">Tentang Kami</a>
-        <a href="#contact" data-id="Kontak" data-en="Contact">Kontak</a>
-        <a href="{{ route('products') }}" data-id="Produk" data-en="Products">Produk</a>
-    </div>
-</div>
-
-        <div class="f-quote">
-            <em data-id=" " data-en=" "> </em>
+            <h6 data-id="Navigasi Singkat" data-en="Quick Navigation">Navigasi Singkat</h6>
+            <div class="nav-links">
+                <a href="{{ route('home') }}" data-id="Beranda" data-en="Home">Beranda</a>
+                <a href="{{ route('about') }}" data-id="Tentang Kami" data-en="About Us">Tentang Kami</a>
+                <a href="{{ route('products') }}" data-id="Produk" data-en="Products">Produk</a>
+                <a href="{{ route('operational') }}" data-id="Operasional" data-en="Operational">Operasional</a>
+                <a href="#contact" data-id="Kontak" data-en="Contact">Kontak</a>
+            </div>
         </div>
     </div>
 

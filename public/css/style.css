@@ -711,10 +711,15 @@ nav a.active::after {
 }
  
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-24px);
+    box-shadow: 0 32px 72px rgba(18, 77, 39, .3);
 }
- 
+
+.product-card:active {
+    transform: translateY(-24px);
+    box-shadow: 0 32px 72px rgba(18, 77, 39, .3);
+}
+
 /* --- Kotak Abu-abu / Tempat Gambar (SUDAH BENAR) --- */
 .product-img {
     display: flex;
@@ -733,10 +738,6 @@ nav a.active::after {
     height: 80%;
     object-fit: contain;
     transition: .5s;
-}
- 
-.product-card:hover .product-img img {
-    transform: scale(1.12) rotate(-3deg);
 }
  
 .product-info h4 {
@@ -759,69 +760,130 @@ nav a.active::after {
     text-decoration: none;
 }
  
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px 16px 24px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(35, 122, 64, .06);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.category-card-art {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    padding: 18px;
+    background: #e7f3e8;
+    color: var(--green-700);
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.category-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.category-card-content h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.category-card-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--green-600);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.category-card-link i {
+    transition: transform .2s ease;
+}
+
+.category-card-link:hover i {
+    transform: translateX(4px);
+}
+
+.product-card.hide {
+    display: none;
+}
+
  
 /* ==========================================================================
    11. OPERASIONAL
    ========================================================================== */
  
-/* --- Kartu operasional --- */
+/* --- Informasi operasional tanpa kartu --- */
 .op-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 1.1fr;
-    gap: 20px;
-    align-items: stretch;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    align-items: start;
+    border-block: 1px solid rgba(35, 122, 64, .18);
 }
  
 .op-card {
-    position: relative;
-    padding: 28px 24px;
-    overflow: hidden;
-    background: #fff;
-    border: 1px solid rgba(35, 122, 64, .08);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition:
-        transform  .4s,
-        box-shadow .4s,
-        opacity    .9s;
+    min-height: 190px;
+    padding: 30px 32px;
+    transition: opacity .9s;
 }
  
-.op-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--green-500), var(--gold));
-}
- 
-.op-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+.op-card + .op-card {
+    border-left: 1px solid rgba(35, 122, 64, .18);
 }
  
 .op-icon {
     display: grid;
     place-items: center;
-    width: 54px;
-    height: 54px;
-    margin-bottom: 14px;
-    background: linear-gradient(135deg, var(--green-700), var(--green-500));
-    border-radius: 16px;
-    font-size: 22px;
-    color: #fff;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--green-100);
+    font-size: 18px;
+    color: var(--green-700);
 }
  
 .op-card h5 {
-    margin-bottom: 6px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
     color: var(--green-900);
 }
  
 .op-card .big {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 700;
     line-height: 1.2;
     color: var(--green-600);
@@ -836,20 +898,26 @@ nav a.active::after {
 .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
+    gap: 0;
+    margin-top: 14px;
 }
  
 .pills span {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 16px;
-    background: var(--green-100);
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
+    gap: 8px;
+    padding: 2px 14px;
     color: var(--green-700);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pills span:first-child {
+    padding-left: 0;
+}
+
+.pills span + span {
+    border-left: 1px solid rgba(35, 122, 64, .25);
 }
  
 /* --- Sticky note --- */
@@ -1185,7 +1253,22 @@ nav a.active::after {
     .op-grid {
         grid-template-columns: 1fr 1fr;
     }
- 
+
+    .op-card {
+        padding: 26px 24px;
+    }
+
+    .op-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        border-top: 1px solid rgba(35, 122, 64, .18);
+        border-left: 0;
+        text-align: center;
+    }
+
+    .op-card:last-child:nth-child(odd) .op-icon {
+        margin-inline: auto;
+    }
+
     .steps-grid {
         grid-template-columns: 1fr;
     }
@@ -1250,6 +1333,10 @@ nav a.active::after {
     .scroll-down {
         display: none;
     }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
  
 /* --- Ponsel (≤ 560px) --- */
@@ -1262,12 +1349,44 @@ nav a.active::after {
     .op-grid {
         grid-template-columns: 1fr;
     }
- 
+
+    .op-card {
+        min-height: 0;
+        padding: 24px 12px;
+    }
+
+    .op-card + .op-card {
+        border-top: 1px solid rgba(35, 122, 64, .18);
+        border-left: 0;
+    }
+
+    .op-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        text-align: left;
+    }
+
+    .op-card:last-child:nth-child(odd) .op-icon {
+        margin-inline: 0;
+    }
+
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
     }
- 
+
+    .category-grid {
+        gap: 14px;
+    }
+
+    .category-card {
+        gap: 16px;
+        padding: 12px 12px 18px;
+    }
+
+    .category-card-content h3 {
+        font-size: 17px;
+    }
+
     .btn-wa {
         padding: 14px 28px;
         font-size: 19px;
