@@ -26,7 +26,6 @@
         </div>
     </div>
 
-    <div class="scroll-down"><i class="fa-solid fa-chevron-down"></i></div>
     <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,0 720,40 C960,80 1200,110 1440,50 L1440,120 L0,120 Z"/></svg>
 </section>
 
