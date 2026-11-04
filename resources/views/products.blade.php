@@ -26,8 +26,8 @@
 
         <div class="product-layout">
             <div class="product-grid" id="productGrid">
-                @foreach ($products as $p)
-                    @include('partials.product-card', ['p' => $p])
+                @foreach ($products as $product)
+                    @include('partials.product-card', ['product' => $product])
                 @endforeach
             </div>
 

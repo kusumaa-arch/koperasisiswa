@@ -1,90 +1,143 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var header = document.getElementById('header');
-    var nav = document.getElementById('nav');
-    var burger = document.getElementById('burger');
-    var toTop = document.getElementById('toTop');
+(() => {
+    'use strict';
+
+    const HEADER_SCROLL_OFFSET = 60;
+    const TO_TOP_SCROLL_OFFSET = 500;
+    const REVEAL_THRESHOLD = 0.12;
+
+    const SUPPORTED_LANGUAGES = ['id', 'en'];
+    const DEFAULT_LANGUAGE = 'id';
+    const LANGUAGE_STORAGE_KEY = 'lang';
+
+    /* localStorage bisa tidak tersedia (mode privat, dll.), jadi dibungkus aman. */
+    const storage = {
+        get(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch {
+                return null;
+            }
+        },
+        set(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch {
+                /* abaikan */
+            }
+        },
+    };
 
     /* Header berubah + tombol kembali ke atas saat scroll */
-    function onScroll() {
-        var y = window.scrollY;
-        header.classList.toggle('scrolled', y > 60);
-        toTop.classList.toggle('show', y > 500);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    function initScrollEffects() {
+        const header = document.getElementById('header');
+        const toTop = document.getElementById('toTop');
+        if (!header || !toTop) {
+            return;
+        }
 
-    toTop.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        const update = () => {
+            header.classList.toggle('scrolled', window.scrollY > HEADER_SCROLL_OFFSET);
+            toTop.classList.toggle('show', window.scrollY > TO_TOP_SCROLL_OFFSET);
+        };
+
+        window.addEventListener('scroll', update, { passive: true });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        update();
+    }
 
     /* Menu mobile */
-    burger.addEventListener('click', function () {
-        nav.classList.toggle('open');
-    });
-    nav.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-            nav.classList.remove('open');
+    function initMobileMenu() {
+        const nav = document.getElementById('nav');
+        const burger = document.getElementById('burger');
+        if (!nav || !burger) {
+            return;
+        }
+
+        burger.addEventListener('click', () => nav.classList.toggle('open'));
+        nav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => nav.classList.remove('open'));
         });
-    });
+    }
 
     /* Animasi muncul saat scroll */
-    var items = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries, obs) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                    e.target.classList.add('in');
-                    obs.unobserve(e.target);
+    function initRevealAnimation() {
+        const items = document.querySelectorAll('.reveal');
+
+        if (!('IntersectionObserver' in window)) {
+            items.forEach((item) => item.classList.add('in'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
-        items.forEach(function (el) { io.observe(el); });
-    } else {
-        items.forEach(function (el) { el.classList.add('in'); });
+        }, { threshold: REVEAL_THRESHOLD });
+
+        items.forEach((item) => observer.observe(item));
     }
 
     /* Filter produk (halaman Produk) */
-    var chips = document.querySelectorAll('#filters .chip');
-    var cards = document.querySelectorAll('#productGrid .product-card');
-    chips.forEach(function (chip) {
-        chip.addEventListener('click', function () {
-            chips.forEach(function (c) { c.classList.remove('active'); });
-            chip.classList.add('active');
+    function initProductFilter() {
+        const chips = document.querySelectorAll('#filters .chip');
+        const cards = document.querySelectorAll('#productGrid .product-card');
 
-            var f = chip.dataset.filter;
-            cards.forEach(function (card) {
-                var show = (f === 'all' || card.dataset.cat === f);
-                card.classList.toggle('hide', !show);
-                if (show) card.classList.add('in');
+        chips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+                chips.forEach((other) => other.classList.toggle('active', other === chip));
+
+                const filter = chip.dataset.filter;
+                cards.forEach((card) => {
+                    const isVisible = filter === 'all' || card.dataset.cat === filter;
+                    card.classList.toggle('hide', !isVisible);
+                    if (isVisible) {
+                        card.classList.add('in');
+                    }
+                });
             });
         });
-    });
-
-    /* Ganti bahasa ID / EN */
-    var langButtons = document.querySelectorAll('#language button');
-
-    function setLang(lang) {
-        document.documentElement.lang = lang;
-
-        document.querySelectorAll('[data-id][data-en]').forEach(function (el) {
-            el.innerHTML = el.getAttribute('data-' + lang);
-        });
-
-        langButtons.forEach(function (b) {
-            b.classList.toggle('active', b.dataset.lang === lang);
-        });
-
-        try { localStorage.setItem('lang', lang); } catch (e) {}
     }
 
-    langButtons.forEach(function (b) {
-        b.addEventListener('click', function () {
-            setLang(b.dataset.lang);
-        });
-    });
+    /* Ganti bahasa ID / EN */
+    function initLanguageSwitcher() {
+        const buttons = document.querySelectorAll('#language button');
 
-    try {
-        var saved = localStorage.getItem('lang');
-        if (saved && saved !== 'id') setLang(saved);
-    } catch (e) {}
-});
+        const setLanguage = (lang) => {
+            if (!SUPPORTED_LANGUAGES.includes(lang)) {
+                return;
+            }
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-id][data-en]').forEach((element) => {
+                element.innerHTML = element.getAttribute(`data-${lang}`);
+            });
+
+            buttons.forEach((button) => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+
+            storage.set(LANGUAGE_STORAGE_KEY, lang);
+        };
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => setLanguage(button.dataset.lang));
+        });
+
+        const savedLanguage = storage.get(LANGUAGE_STORAGE_KEY);
+        if (savedLanguage && savedLanguage !== DEFAULT_LANGUAGE) {
+            setLanguage(savedLanguage);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initScrollEffects();
+        initMobileMenu();
+        initRevealAnimation();
+        initProductFilter();
+        initLanguageSwitcher();
+    });
+})();
