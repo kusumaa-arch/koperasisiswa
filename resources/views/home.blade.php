@@ -44,15 +44,6 @@
                data-en="The Student Cooperative (Kopsis) <b>Skansaba Syariah</b> at SMK Negeri 1 Bantul was established as part of the Sharia Economy Pioneer School Program by the National Committee for Sharia Economy and Finance through Dikpora DIY.">
                 Koperasi Siswa (Kopsis) <b>Skansaba Syariah</b> merupakan koperasi siswa di SMK Negeri 1 Bantul yang dibentuk sebagai wujud pelaksanaan Program Sekolah Pelopor Ekonomi Syariah oleh Komite Nasional Ekonomi dan Keuangan Syariah melalui Dikpora DIY.
             </p>
-
-            <div class="info-cards three">
-                <div class="info-card">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <strong data-id="Tujuan" data-en="Goal">Tujuan</strong>
-                    <small data-id="Mendukung pelaksanaan ekonomi syariah" data-en="Supporting the implementation of sharia economy">Mendukung pelaksanaan ekonomi syariah</small>
-                </div>
-            </div>
-
             <a href="{{ route('about') }}" class="link-more"><span data-id="Selengkapnya" data-en="Read more">Selengkapnya</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>

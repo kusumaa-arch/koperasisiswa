@@ -90,25 +90,8 @@ button {
 /* ==========================================================================
    4. TIPOGRAFI
    ========================================================================== */
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--green-600);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
+
  
-.eyebrow::before {
-    content: "";
-    width: 36px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), var(--green-500));
-}
- 
-.title,
 .about-content h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(26px, 3.4vw, 40px);
@@ -613,76 +596,6 @@ nav a.active::after {
     color: var(--green-500);
 }
  
-/* --- Kartu informasi --- */
-.info-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 24px;
-}
- 
-.info-cards.three {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-}
- 
-.info-card {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 20px 16px;
-    background: #fff;
-    border: 1px solid rgba(35, 122, 64, .08);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    transition: .35s;
-}
- 
-.info-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-}
- 
-.info-card i {
-    margin-bottom: 4px;
-    font-size: 26px;
-    color: var(--green-600);
-}
- 
-.info-card strong {
-    font-size: 15px;
-    color: var(--green-900);
-}
- 
-.info-card small {
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--muted);
-}
- 
-/* --- Bagian tambahan --- */
-.about-extra {
-    background: linear-gradient(180deg, var(--green-50), var(--green-100));
-}
- 
-.program-note {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 34px;
-    padding: 22px 26px;
-    background: #fff;
-    border-left: 5px solid var(--gold);
-    border-radius: var(--radius);
-    color: #33443a;
-    box-shadow: var(--shadow);
-}
- 
-.program-note i {
-    font-size: 30px;
-    color: var(--gold);
-}
  
 /* --- Keyframes (dipakai juga oleh .promo-icon) --- */
 @keyframes float {
