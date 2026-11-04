@@ -9,7 +9,7 @@
     <div class="overlay"></div>
 
     <div class="hero-content">
-        <p class="tagline" data-id="Profesional Barokah Mensejahterakan" data-en="Professional, Blessed, Prosperous">Profesional Barokah Mensejahterakan</p>
+        <p class="tagline" data-id="Profesional, Barokah, Mensejahterakan" data-en="Professional, Blessed, Prosperous">Profesional, Barokah, Mensejahterakan</p>
         <h1>Koperasi Siswa <span>Syariah</span></h1>
         <h3>SMK Negeri 1 Bantul</h3>
 
