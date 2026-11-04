@@ -61,10 +61,10 @@ class PageController extends Controller
             ['name' => 'Pensil Warna', 'price' => 6500, 'cat' => 'alat-tulis', 'img' => 'pensil-warna.png'],
             ['name' => 'Pensil Warna', 'price' => 10000, 'cat' => 'alat-tulis', 'img' => 'pensil-warna.png'],
             ['name' => 'Rautan', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'rautan.png'],
+                        ['name' => 'Penggaris', 'price' => 2500, 'cat' => 'alat-tulisg', 'img' => 'penggaris.jpg'],
 
             // Perlengkapan sekolah
             ['name' => 'Kaos Kaki', 'price' => 10000, 'price_max' => 15000, 'cat' => 'perlengkapan', 'img' => 'kaoskaki.jpg'],
-            ['name' => 'Penggaris', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'penggaris.jpg'],
             ['name' => 'Tali Pramuka', 'price' => 5000, 'price_max' => 8000, 'cat' => 'perlengkapan', 'img' => 'tali.jpg'],
             ['name' => 'Topi Pramuka', 'price' => 25000, 'cat' => 'perlengkapan', 'img' => 'topi.jpg'],
             ['name' => 'Hasduk', 'price' => 19000, 'cat' => 'perlengkapan', 'img' => 'hasduk.jpg'],

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+g@extends('layouts.app')
 
 @section('title', 'Tentang Kami | Koperasi Siswa Syariah')
 @section('header_class', 'solid')
