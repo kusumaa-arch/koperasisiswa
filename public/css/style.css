@@ -108,6 +108,7 @@ nav a:hover::after,nav a.active::after{width:100%}
 .info-card strong{font-size:15px;color:var(--green-900)}
 .info-card small{color:var(--muted);font-size:13px;line-height:1.5}
 .info-cards.three{margin-top:0}
+.info-cards.three{grid-template-columns:1fr;max-width:420px;margin:0 auto}
 .about-extra{background:linear-gradient(180deg,var(--green-50),var(--green-100))}
 .program-note{margin-top:34px;display:flex;gap:16px;align-items:center;background:#fff;padding:22px 26px;border-radius:var(--radius);box-shadow:var(--shadow);border-left:5px solid var(--gold);color:#33443a}
 .program-note i{font-size:30px;color:var(--gold)}

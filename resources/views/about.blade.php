@@ -28,7 +28,7 @@
         <div class="values">
             <div class="value"><span data-id="Profesional" data-en="Professional">Profesional</span></div>
             <div class="value"><span data-id="Barokah" data-en="Blessing">Barokah</span></div>
-            <div class="value"><span data-id="Mengsejahterakan" data-en="Welfare    ">Mengsejahterakan</span></div>
+            <div class="value"><span data-id="Mengsejahterakan" data-en="Blessing">Mengsejahterakan</span></div>
         </div>
     </div>
 </section>
@@ -40,23 +40,14 @@
             <h2 class="title" data-id="Mengenal Kopsis Lebih Dekat" data-en="Get to Know Kopsis Closer">Mengenal Kopsis Lebih Dekat</h2>
         </div>
 
-        <div class="info-cards three">
-            <div class="info-card reveal">
-                <i class="fa-solid fa-users"></i>
-                <strong data-id="Pengelola" data-en="Managers">Pengelola</strong>
-                <small data-id="Siswa anggota organisasi Kopsis" data-en="Student members of Kopsis">Siswa anggota organisasi Kopsis</small>
+            <div class="info-cards">
+                
+                <div class="info-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <strong data-id="Tujuan" data-en="Goal">Tujuan</strong>
+                    <small data-id="Mendukung pelaksanaan ekonomi syariah" data-en="Supporting the implementation of sharia economy">Mendukung pelaksanaan ekonomi syariah</small>
+                </div>
             </div>
-            <div class="info-card reveal d1">
-                <i class="fa-solid fa-chalkboard-user"></i>
-                <strong data-id="Guru Pembina" data-en="Advisors">Guru Pembina</strong>
-                <small>Ibu Ririh Damayanti & Ibu Suratimah</small>
-            </div>
-            <div class="info-card reveal d2">
-                <i class="fa-solid fa-bullseye"></i>
-                <strong data-id="Tujuan" data-en="Goal">Tujuan</strong>
-                <small data-id="Mendukung pelaksanaan ekonomi syariah" data-en="Supporting the implementation of sharia economy">Mendukung pelaksanaan ekonomi syariah</small>
-            </div>
-        </div>
 
         <p class="program-note reveal">
             <i class="fa-solid fa-award"></i>
@@ -64,7 +55,7 @@
                   data-en="Established as part of the Sharia Economy Pioneer School Program by the National Committee for Sharia Economy and Finance through Dikpora DIY.">
                 Dibentuk sebagai wujud pelaksanaan Program Sekolah Pelopor Ekonomi Syariah oleh Komite Nasional Ekonomi dan Keuangan Syariah melalui Dikpora DIY.
             </span>
-        </p>
+        </p
     </div>
 </section>
 
