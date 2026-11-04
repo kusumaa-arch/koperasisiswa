@@ -7,7 +7,7 @@
 
 <section class="about-container">
     <div class="about-image reveal">
-        <img src="{{ asset('images/about.jpg') }}" alt="Koperasi Siswa Syariah"
+        <img src="{{ asset('images/abt.png') }}" alt="Koperasi Siswa Syariah"
              onerror="this.onerror=null;this.src='https://placehold.co/800x600/e8f3e8/1b5e32?text=Kopsis+Skansaba'">
     </div>
 
