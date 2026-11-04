@@ -97,8 +97,6 @@
         <small>© {{ date('Y') }} Kopsis Skansaba Syariah. All rights reserved.</small>
         <div class="socials">
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
     </div>
 </footer>

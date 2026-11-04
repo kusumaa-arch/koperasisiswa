@@ -36,11 +36,6 @@
         <div class="about-image reveal">
             <img src="{{ asset('images/about.jpg') }}" alt="Toko Kopsis Skansaba Syariah"
                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/e8f3e8/1b5e32?text=Kopsis+Skansaba'">
-            <div class="badge-float">
-                <i class="fa-solid fa-circle-check"></i>
-                <div><strong data-id="Berbasis Syariah" data-en="Sharia-Based">Berbasis Syariah</strong>
-                <small data-id="Amanah & Transparan" data-en="Trustworthy & Transparent">Amanah & Transparan</small></div>
-            </div>
         </div>
 
         <div class="about-content reveal d1">
@@ -51,17 +46,7 @@
                 Koperasi Siswa (Kopsis) <b>Skansaba Syariah</b> merupakan koperasi siswa di SMK Negeri 1 Bantul yang dibentuk sebagai wujud pelaksanaan Program Sekolah Pelopor Ekonomi Syariah oleh Komite Nasional Ekonomi dan Keuangan Syariah melalui Dikpora DIY.
             </p>
 
-            <div class="info-cards">
-                <div class="info-card">
-                    <i class="fa-solid fa-users"></i>
-                    <strong data-id="Pengelola" data-en="Managers">Pengelola</strong>
-                    <small data-id="Siswa anggota organisasi Kopsis" data-en="Student members of Kopsis">Siswa anggota organisasi Kopsis</small>
-                </div>
-                <div class="info-card">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                    <strong data-id="Guru Pembina" data-en="Advisors">Guru Pembina</strong>
-                    <small>Ibu Ririh Damayanti & Ibu Suratimah</small>
-                </div>
+            <div class="info-cards three">
                 <div class="info-card">
                     <i class="fa-solid fa-bullseye"></i>
                     <strong data-id="Tujuan" data-en="Goal">Tujuan</strong>
@@ -91,10 +76,9 @@
 
             <aside class="promo reveal d2">
                 <div class="promo-glow"></div>
-                <p class="handwritten">Lengkap,<br>Praktis,<br>Berkah!</p>
                 <i class="fa-solid fa-bag-shopping promo-icon"></i>
                 <a href="{{ route('products') }}" class="btn-cream">
-                    <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
+                    <img <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </aside>
