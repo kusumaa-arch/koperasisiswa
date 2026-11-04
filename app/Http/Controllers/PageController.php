@@ -25,7 +25,9 @@ class PageController extends Controller
             ['name' => 'Penggaris',    'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'penggaris.png'],
             ['name' => 'Roti Coklat',  'price' => 4000, 'cat' => 'makanan',      'img' => 'roti.png'],
             ['name' => 'Teh Botol',    'price' => 4000, 'cat' => 'minuman',      'img' => 'teh.png'],
-        ];
+            ['name' => 'Biskuit',      'price' => 3000, 'cat' => 'makanan',      'img' => 'biskuit.png'],
+            ['name' => 'Pensil Warna', 'price' => 10000, 'cat' => 'alat-tulis',   'img' => 'pensil-warna.png'],
+            ['name' => 'Pensil Warna', 'price' => 10000, 'cat' => 'alat-tulis',   'img' => 'pensil-warna.png'],        ];
     }
 
     public function home()
