@@ -33,7 +33,6 @@
 
             <aside class="promo reveal d2">
                 <div class="promo-glow"></div>
-                <p class="handwritten">Lengkap,<br>Praktis,<br>Berkah!</p>
                 <i class="fa-solid fa-bag-shopping promo-icon"></i>
                 <a href="#contact" class="btn-cream">
                     <span data-id="Hubungi Untuk Pesan" data-en="Contact to Order">Hubungi Untuk Pesan</span>
