@@ -34,7 +34,7 @@
 <section class="section about-preview">
     <div class="container about-grid">
         <div class="about-image reveal">
-            <img src="{{ asset('images/about.jpg') }}" alt="Toko Kopsis Skansaba Syariah"
+            <img src="{{ asset('images/about.png') }}" alt="Toko Kopsis Skansaba Syariah"
                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/e8f3e8/1b5e32?text=Kopsis+Skansaba'">
         </div>
 
@@ -69,8 +69,8 @@
 
         <div class="product-layout">
             <div class="product-grid">
-                @foreach ($products as $p)
-                    @include('partials.product-card', ['p' => $p])
+                @foreach ($products as $product)
+                    @include('partials.product-card', ['product' => $product])
                 @endforeach
             </div>
 
@@ -78,7 +78,7 @@
                 <div class="promo-glow"></div>
                 <i class="fa-solid fa-bag-shopping promo-icon"></i>
                 <a href="{{ route('products') }}" class="btn-cream">
-                    <img <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
+                    <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </aside>
