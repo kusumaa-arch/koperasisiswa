@@ -60,21 +60,25 @@
         <div class="product-layout">
             <div class="product-grid">
                 @foreach ($products as $product)
-                    @include('partials.product-card', ['product' => $product])
+                    <div class="product-card reveal">
+                        <div class="product-image">
+                            <img src="{{ $product['img'] ? asset('storage/' . $product['img']) : asset('images/default-product.png') }}" 
+                                 alt="{{ $product['name'] }}"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x400/e8f3e8/1b5e32?text={{ urlencode($product['name']) }}'">
+                        </div>
+<br>
+                        <div class="product-info">
+                            <h3>{{ $product['name'] }}</h3>
+                            <br>
+                            {{-- Mengganti harga dengan tautan "Lihat selengkapnya" --}}
+                            <a href="{{ route('products') }}" class="product-link-more">
+                                <span data-id="Lihat selengkapnya" data-en="See more">Lihat selengkapnya</span> 
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 @endforeach
             </div>
-
-            <aside class="promo reveal d2">
-                <div class="promo-glow"></div>
-                <i class="fa-solid fa-bag-shopping promo-icon"></i>
-                <a href="{{ route('products') }}" class="btn-cream">
-                    <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </aside>
-        </div>
-    </div>
-</section>
 
 {{-- ============ OPERATIONAL PREVIEW ============ --}}
 <section class="section">

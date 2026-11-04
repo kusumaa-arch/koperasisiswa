@@ -648,7 +648,7 @@ nav a.active::after {
     background: linear-gradient(180deg, var(--green-50), var(--green-100));
 }
  
-/* --- Filter kategori --- */
+/* --- Filter kategori (SUDAH BENAR) --- */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -682,32 +682,32 @@ nav a.active::after {
     box-shadow: 0 8px 20px rgba(35, 122, 64, .35);
 }
  
-/* --- Tata letak produk + promo --- */
+/* --- Tata letak produk & grid (SUDAH BENAR & DIPERBAIKI) --- */
 .product-layout {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 26px;
+    grid-template-columns: 1fr; /* INI SUDAH BENAR: Memaksa tumpuk atas-bawah */
+    gap: 40px; /* Saya sarankan naikkan gap jadi 40px agar jarak produk dan info operasional lebih lega */
     align-items: start;
 }
  
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* SUDAH BENAR: 4 kolom rapi */
     gap: 20px;
 }
  
-/* --- Kartu produk --- */
+/* --- Kartu Produk / Kotak Luar (SUDAH BENAR) --- */
 .product-card {
-    padding: 12px 12px 18px;
+    padding: 16px 16px 20px;
     background: #fff;
     border: 1px solid rgba(35, 122, 64, .06);
     border-radius: 20px;
     text-align: center;
     box-shadow: var(--shadow);
-    transition:
-        transform  .4s cubic-bezier(.2, .8, .2, 1),
-        box-shadow .4s,
-        opacity    .9s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s;
 }
  
 .product-card:hover {
@@ -715,23 +715,22 @@ nav a.active::after {
     box-shadow: var(--shadow-lg);
 }
  
-.product-card.hide {
-    display: none;
-}
- 
+/* --- Kotak Abu-abu / Tempat Gambar (SUDAH BENAR) --- */
 .product-img {
-    display: grid;
-    place-items: center;
-    margin-bottom: 12px;
-    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Biar bentuknya kotak pas sempurna */
+    margin-bottom: 14px;
     overflow: hidden;
-    background: linear-gradient(145deg, #f6f9f6, #eaf2ea);
+    background: linear-gradient(145deg, #eaeaea, #dfdfdf); 
     border-radius: 14px;
 }
  
 .product-img img {
-    width: 78%;
-    height: 78%;
+    width: 80%; /* Ukuran gambar di dalam kotak */
+    height: 80%;
     object-fit: contain;
     transition: .5s;
 }
@@ -744,55 +743,20 @@ nav a.active::after {
     font-size: 16px;
     font-weight: 600;
     color: var(--green-900);
+    margin-bottom: 8px;
 }
- 
-.price {
-    display: inline-block;
-    margin-top: 2px;
-    font-weight: 700;
-    color: var(--green-600);
-}
- 
-/* --- Kotak promo --- */
-.promo {
-    position: sticky;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+/* --- Tautan "Lihat selengkapnya" (SUDAH BENAR) --- */
+.product-link-more {
+    display: inline-flex;
     align-items: center;
-    gap: 18px;
-    min-height: 320px;
-    padding: 34px 26px;
-    overflow: hidden;
-    background: linear-gradient(160deg, var(--green-800), var(--green-900));
-    border-radius: var(--radius);
-    color: #fff;
-    text-align: center;
-    box-shadow: var(--shadow-lg);
-}
- 
-.promo-glow {
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 220px;
-    height: 220px;
-    background: radial-gradient(circle, rgba(232, 207, 138, .35), transparent 70%);
-}
- 
-.promo .handwritten {
-    position: relative;
-    font-size: 40px;
-    line-height: 1.1;
-    color: var(--gold-light);
-    transform: rotate(-6deg);
-}
- 
-.promo-icon {
-    font-size: 48px;
-    color: var(--cream);
-    animation: float 3.5s ease-in-out infinite;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-600, #1b5e32);
+    text-decoration: none;
 }
  
  

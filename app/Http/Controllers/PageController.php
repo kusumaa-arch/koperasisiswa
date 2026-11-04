@@ -6,12 +6,11 @@ use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
 {
-    private const HOME_PRODUCT_LIMIT = 4;
-
     public function home(): View
     {
         return view('home', [
-            'products' => array_slice($this->productData(), 0, self::HOME_PRODUCT_LIMIT),
+            // Mengirim 4 data kategori khusus untuk preview di halaman utama
+            'products' => $this->homeCategoryPreviews(),
         ]);
     }
 
@@ -24,7 +23,7 @@ class PageController extends Controller
     {
         return view('products', [
             'categories' => $this->categoryData(),
-            'products' => $this->productData(),
+            'products' => $this->productData(), // Halaman produk tetap menggunakan data lengkap ini
         ]);
     }
 
@@ -47,48 +46,80 @@ class PageController extends Controller
     }
 
     /**
-     * @return list<array{name: string, price: int, price_max?: int, cat: string, img: string}>
+     * Data khusus untuk 4 kotak kategori di Halaman Utama (Homepage)
+     */
+    private function homeCategoryPreviews(): array
+    {
+        return [
+            [
+                'name' => 'Alat Tulis', 
+                'name_en' => 'Stationery', 
+                'cat' => 'alat-tulis', 
+                'img' => 'alat-tulis.jpg' // Pastikan file gambar ini ada di folder public/images/
+            ],
+            [
+                'name' => 'Perlengkapan Sekolah', 
+                'name_en' => 'School Supplies', 
+                'cat' => 'perlengkapan', 
+                'img' => 'perlengkapan-sekolah.jpg'
+            ],
+            [
+                'name' => 'Makanan Ringan', 
+                'name_en' => 'Snacks', 
+                'cat' => 'makanan', 
+                'img' => 'makanan-ringan.jpg'
+            ],
+            [
+                'name' => 'Minuman', 
+                'name_en' => 'Drinks', 
+                'cat' => 'minuman', 
+                'img' => 'minuman.jpg'
+            ],
+        ];
+    }
+
+    /**
+     * @return list<array{name: string, name_en: string, price: int, price_max?: int, cat: string, img: string}>
      */
     private function productData(): array
     {
         return [
             // Alat tulis
-            ['name' => 'Buku Tulis Big Bos', 'price' => 5500, 'cat' => 'alat-tulis', 'img' => 'bigboss.jpg'],
-            ['name' => 'Pulpen', 'price' => 3500, 'cat' => 'alat-tulis', 'img' => 'pulpen.jpg'],
-            ['name' => 'Spidol', 'price' => 4000, 'cat' => 'alat-tulis', 'img' => 'spidol.jpg'],
-            ['name' => 'Penghapus', 'price' => 2000, 'cat' => 'alat-tulis', 'img' => 'penghapus.jpg'],
-            ['name' => 'Pensil 2B', 'price' => 4000, 'cat' => 'alat-tulis', 'img' => 'pensil.png'],
-            ['name' => 'Pensil Warna', 'price' => 6500, 'cat' => 'alat-tulis', 'img' => 'pensil-warna.png'],
-            ['name' => 'Pensil Warna', 'price' => 10000, 'cat' => 'alat-tulis', 'img' => 'pensil-warna.png'],
-            ['name' => 'Rautan', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'rautan.png'],
-                        ['name' => 'Penggaris', 'price' => 2500, 'cat' => 'alat-tulisg', 'img' => 'penggaris.jpg'],
+            ['name' => 'Buku Tulis Big Bos', 'name_en' => 'Big Bos Notebook', 'price' => 5500, 'cat' => 'alat-tulis', 'img' => 'bigboss.jpg'],
+            ['name' => 'Buku Tulis', 'name_en' => 'Notebook', 'price' => 5000, 'cat' => 'alat-tulis', 'img' => 'buku.png'],
+            ['name' => 'Pulpen Kokoro', 'name_en' => 'Kokoro Pen', 'price' => 6000, 'cat' => 'alat-tulis', 'img' => 'kokoro.png'],
+            ['name' => 'Penghapus', 'name_en' => 'Eraser', 'price' => 2000, 'cat' => 'alat-tulis', 'img' => 'penghapus.jpg'],
+            ['name' => 'Pensil Staedtler', 'name_en' => 'Staedtler Pencil', 'price' => 4000, 'cat' => 'alat-tulis', 'img' => 'pensilsteadler.png'],
+            ['name' => 'Pensil Faber-Castell', 'name_en' => 'Faber-Castell Pencil', 'price' => 4000, 'cat' => 'alat-tulis', 'img' => 'fbcastellpensil.jpg'],
+            ['name' => 'Pensil Warna', 'name_en' => 'Colored Pencils', 'price' => 10000, 'cat' => 'alat-tulis', 'img' => 'pewarna.png'],
+            ['name' => 'Rautan', 'name_en' => 'Pencil Sharpener', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'rautan.png'],
+            ['name' => 'Penggaris', 'name_en' => 'Ruler', 'price' => 2500, 'cat' => 'alat-tulis', 'img' => 'penggaris.png'],
+            ['name' => 'Lem Joyko', 'name_en' => 'Joyko Glue', 'price' => 3000, 'cat' => 'alat-tulis', 'img' => 'gluejoyko.png'],
+            ['name' => 'Lem Kenko', 'name_en' => 'Kenko Glue', 'price' => 3500, 'cat' => 'alat-tulis', 'img' => 'gluekenko.png'],
+            ['name' => 'Alat Tulis Hitech', 'name_en' => 'Hitech Stationery', 'price' => 5000, 'cat' => 'alat-tulis', 'img' => 'hitech.png'],
 
             // Perlengkapan sekolah
-            ['name' => 'Kaos Kaki', 'price' => 10000, 'price_max' => 15000, 'cat' => 'perlengkapan', 'img' => 'kaoskaki.jpg'],
-            ['name' => 'Tali Pramuka', 'price' => 5000, 'price_max' => 8000, 'cat' => 'perlengkapan', 'img' => 'tali.jpg'],
-            ['name' => 'Topi Pramuka', 'price' => 25000, 'cat' => 'perlengkapan', 'img' => 'topi.jpg'],
-            ['name' => 'Hasduk', 'price' => 19000, 'cat' => 'perlengkapan', 'img' => 'hasduk.jpg'],
-            ['name' => 'Buku Saku', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'busak.png'],
-            ['name' => 'Ciput Pet', 'price' => 6000, 'cat' => 'perlengkapan', 'img' => 'ciput.png'],
-            ['name' => 'Ikat Pinggang', 'price' => 16000, 'cat' => 'perlengkapan', 'img' => 'ikatpinggang.jpg'],
-            ['name' => 'Tissue', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'tissue.png'],
-            ['name' => 'Tissue Basah', 'price' => 5500, 'cat' => 'perlengkapan', 'img' => 'tissue-basah.png'],
-            ['name' => 'Tissue Kecil', 'price' => 1500, 'cat' => 'perlengkapan', 'img' => 'tissue-kecil.png'],
-            ['name' => 'Deodoran', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'deodoran.png'],
-            ['name' => 'Pembalut', 'price' => 3000, 'cat' => 'perlengkapan', 'img' => 'pembalut.png'],
+            ['name' => 'Kaos Kaki', 'name_en' => 'Socks', 'price' => 10000, 'price_max' => 15000, 'cat' => 'perlengkapan', 'img' => 'kaoskaki.jpg'],
+            ['name' => 'Tali Pramuka', 'name_en' => 'Scout Rope', 'price' => 5000, 'price_max' => 8000, 'cat' => 'perlengkapan', 'img' => 'tali.jpg'],
+            ['name' => 'Topi Pramuka', 'name_en' => 'Scout Hat', 'price' => 25000, 'cat' => 'perlengkapan', 'img' => 'topi.jpg'],
+            ['name' => 'Hasduk', 'name_en' => 'Scout Neckerchief', 'price' => 19000, 'cat' => 'perlengkapan', 'img' => 'hasduk.jpg'],
+            ['name' => 'Buku Saku', 'name_en' => 'Pocket Book', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'busak.png'],
+            ['name' => 'Ciput Pet', 'name_en' => 'Hijab Inner Cap', 'price' => 6000, 'cat' => 'perlengkapan', 'img' => 'ciputpet.png'],
+            ['name' => 'Ikat Pinggang', 'name_en' => 'Belt', 'price' => 16000, 'cat' => 'perlengkapan', 'img' => 'ikatpinggang.jpg'],
+            ['name' => 'Deodoran', 'name_en' => 'Deodorant', 'price' => 2500, 'cat' => 'perlengkapan', 'img' => 'deodo.png'],
+            ['name' => 'Pembalut', 'name_en' => 'Sanitary Pad', 'price' => 3000, 'cat' => 'perlengkapan', 'img' => 'pembalut.jpg'],
+            ['name' => 'Tissue Basah', 'name_en' => 'Wet Tissue', 'price' => 5500, 'cat' => 'perlengkapan', 'img' => 'tissuebasah.png'],
+            ['name' => 'Tissue Kecil', 'name_en' => 'Small Tissue', 'price' => 1500, 'cat' => 'perlengkapan', 'img' => 'tissuekecil.png'],
 
             // Makanan ringan
-            ['name' => 'Keripik Singkong', 'price' => 2500, 'cat' => 'makanan', 'img' => 'singkong.png'],
-            ['name' => 'Keripik Taro', 'price' => 2000, 'cat' => 'makanan', 'img' => 'taro.png'],
-            ['name' => 'Roti Coklat', 'price' => 2000, 'cat' => 'makanan', 'img' => 'roti.png'],
-            ['name' => 'Biskuit', 'price' => 3000, 'cat' => 'makanan', 'img' => 'biskuit.png'],
+            ['name' => 'Beng-Beng', 'name_en' => 'Beng-Beng Wafer', 'price' => 2500, 'cat' => 'makanan', 'img' => 'bengbeng.jpg'],
 
             // Minuman
-            ['name' => 'Ultramilk 200ml', 'price' => 5000, 'cat' => 'minuman', 'img' => 'ultramilk.png'],
-            ['name' => 'Ultramilk 250ml', 'price' => 6500, 'cat' => 'minuman', 'img' => 'ultramilk-250.png'],
-            ['name' => 'Galon Kecil', 'price' => 15000, 'cat' => 'minuman', 'img' => 'galon.png'],
-            ['name' => 'Air Mineral', 'price' => 3000, 'cat' => 'minuman', 'img' => 'air.png'],
-            ['name' => 'Teh Botol', 'price' => 4000, 'cat' => 'minuman', 'img' => 'teh.png'],
+            ['name' => 'Ultramilk 200ml', 'name_en' => 'Ultramilk 200ml', 'price' => 5000, 'cat' => 'minuman', 'img' => 'ultra200.jpg'],
+            ['name' => 'Ultramilk 250ml', 'name_en' => 'Ultramilk 250ml', 'price' => 6500, 'cat' => 'minuman', 'img' => 'ultra250.png'],
+            ['name' => 'Galon Kecil', 'name_en' => 'Small Water Gallon', 'price' => 15000, 'cat' => 'minuman', 'img' => 'galon.jpg'],
+            ['name' => 'Le Minerale', 'name_en' => 'Le Minerale Mineral Water', 'price' => 3000, 'cat' => 'minuman', 'img' => 'leminerale.jpg'],
+            ['name' => 'Teh Botol', 'name_en' => 'Bottled Tea', 'price' => 4000, 'cat' => 'minuman', 'img' => 'tehbotol.png'],
         ];
     }
 }
