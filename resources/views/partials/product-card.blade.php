@@ -18,7 +18,7 @@
              onerror="this.onerror=null;this.src=this.dataset.fallback">
     </div>
     <div class="product-info">
-        <h4 data-id="{{ $product['name'] }}" data-en="{{ $product['name_en'] }}">{{ $product['name'] }}</h4>
+<h4 data-id="{{ $product['name'] }}" data-en="{{ $product['name_en'] ?? '' }}">{{ $product['name'] }}</h4>
         <span class="price">{{ $priceLabel }}</span>
     </div>
 </article>

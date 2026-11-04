@@ -87,11 +87,6 @@
             </div>
         </div>
 
-        <div class="f-quote">
-            <em data-id="Bersama Kopsis, Wujudkan Sekolah yang Berkah dan Mandiri" data-en="Together with Kopsis, Build a Blessed and Independent School"> </em>
-        </div>
-    </div>
-
     <div class="container footer-bottom">
         <small>© {{ date('Y') }} Ubu Ungi Team - RPL 1 angkatan 28</small>
         <div class="socials">

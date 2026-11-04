@@ -1083,15 +1083,6 @@ nav a.active::after {
     opacity: 1;
 }
  
-/* --- Kutipan --- */
-.f-quote em {
-    display: block;
-    max-width: 340px;
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    color: var(--gold-light);
-}
- 
 .f-line {
     width: 80%;
     height: 3px;
