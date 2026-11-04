@@ -88,13 +88,12 @@
         </div>
 
         <div class="f-quote">
-            <em data-id="Bersama Kopsis, Wujudkan Sekolah yang Berkah dan Mandiri" data-en="Together with Kopsis, Build a Blessed and Independent School">Bersama Kopsis, Wujudkan Sekolah yang Berkah dan Mandiri</em>
-            <div class="f-line"></div>
+            <em data-id="Bersama Kopsis, Wujudkan Sekolah yang Berkah dan Mandiri" data-en="Together with Kopsis, Build a Blessed and Independent School"> </em>
         </div>
     </div>
 
     <div class="container footer-bottom">
-        <small>© {{ date('Y') }} Kopsis Skansaba Syariah. All rights reserved.</small>
+        <small>© {{ date('Y') }} Ubu Ungi Team - RPL 1 angkatan 28</small>
         <div class="socials">
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>

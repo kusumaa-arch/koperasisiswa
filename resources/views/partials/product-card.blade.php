@@ -11,7 +11,7 @@
 
 <article class="product-card reveal" data-cat="{{ $product['cat'] }}">
     <div class="product-img">
-        <img src="{{ asset('images/products/' . $product['img']) }}"
+        <img src="{{ asset('images/' . $product['img']) }}"
              alt="{{ $product['name'] }}"
              loading="lazy"
              data-fallback="{{ $fallbackImage }}"
