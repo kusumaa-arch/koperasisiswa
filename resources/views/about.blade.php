@@ -26,9 +26,9 @@
         </p>
 
         <div class="values">
-            <div class="value"><i class="fa-solid fa-handshake"></i><span data-id="Amanah" data-en="Trustworthy">Amanah</span></div>
-            <div class="value"><i class="fa-solid fa-star-and-crescent"></i><span data-id="Syariah" data-en="Sharia">Syariah</span></div>
-            <div class="value"><i class="fa-solid fa-seedling"></i><span data-id="Kewirausahaan" data-en="Entrepreneurship">Kewirausahaan</span></div>
+            <div class="value"><span data-id="Profesional" data-en="Professional">Profesional</span></div>
+            <div class="value"><span data-id="Barokah" data-en="Blessing">Barokah</span></div>
+            <div class="value"><span data-id="Mengsejahterakan" data-en="Welfare    ">Mengsejahterakan</span></div>
         </div>
     </div>
 </section>

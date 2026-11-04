@@ -36,11 +36,6 @@
         <div class="about-image reveal">
             <img src="{{ asset('images/about.jpg') }}" alt="Toko Kopsis Skansaba Syariah"
                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/e8f3e8/1b5e32?text=Kopsis+Skansaba'">
-            <div class="badge-float">
-                <i class="fa-solid fa-circle-check"></i>
-                <div><strong data-id="Berbasis Syariah" data-en="Sharia-Based">Berbasis Syariah</strong>
-                <small data-id="Amanah & Transparan" data-en="Trustworthy & Transparent">Amanah & Transparan</small></div>
-            </div>
         </div>
 
         <div class="about-content reveal d1">
@@ -91,10 +86,9 @@
 
             <aside class="promo reveal d2">
                 <div class="promo-glow"></div>
-                <p class="handwritten">Lengkap,<br>Praktis,<br>Berkah!</p>
                 <i class="fa-solid fa-bag-shopping promo-icon"></i>
                 <a href="{{ route('products') }}" class="btn-cream">
-                    <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
+                    <img <span data-id="Lihat Semua Produk" data-en="See All Products">Lihat Semua Produk</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </aside>

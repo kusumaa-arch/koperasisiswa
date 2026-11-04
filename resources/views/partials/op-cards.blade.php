@@ -20,9 +20,4 @@
         <h5 data-id="Lokasi" data-en="Location">Lokasi</h5>
         <p data-id="Langsung di Toko Kopsis Skansaba Syariah" data-en="Directly at the Kopsis Skansaba Syariah Store">Langsung di Toko Kopsis Skansaba Syariah</p>
     </div>
-
-    <div class="sticky-note reveal d3">
-        <span class="pin"></span>
-        <p class="handwritten">Belanja<br>di Kopsis<br>Yuk! 😊</p>
-    </div>
 </div>
