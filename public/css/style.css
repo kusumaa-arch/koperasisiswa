@@ -189,9 +189,7 @@ nav a:hover::after,nav a.active::after{width:100%}
 .socials a:hover{background:var(--gold);color:var(--green-900);transform:translateY(-4px)}
 
 /* ---------- Floating buttons ---------- */
-.wa-float,.to-top{position:fixed;right:22px;z-index:900;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 10px 25px rgba(0,0,0,.25);transition:.3s}
-.wa-float{bottom:22px;background:#25d366;color:#fff}
-.wa-float:hover{transform:scale(1.1)}
+.to-top{position:fixed;right:22px;z-index:900;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 10px 25px rgba(0,0,0,.25);transition:.3s}
 .to-top{bottom:90px;background:var(--green-700);color:#fff;font-size:18px;opacity:0;visibility:hidden;transform:translateY(20px)}
 .to-top.show{opacity:1;visibility:visible;transform:none}
 

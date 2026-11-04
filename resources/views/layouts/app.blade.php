@@ -103,7 +103,6 @@
     </div>
 </footer>
 
-<a href="https://wa.me/6285122603816" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script src="{{ asset('js/script.js') }}"></script>
