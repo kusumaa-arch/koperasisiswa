@@ -436,17 +436,6 @@ nav a.active::after {
     gap: 16px;
 }
  
-/* --- Dekorasi hero --- */
-.wave {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    z-index: 3;
-    width: 100%;
-    height: 110px;
-    fill: var(--cream);
-}
- 
 .scroll-down {
     position: absolute;
     bottom: 120px;
@@ -891,7 +880,7 @@ nav a.active::after {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    align-items: start;
+    align-items: stretch;
     border-block: 1px solid rgba(35, 122, 64, .18);
 }
  
