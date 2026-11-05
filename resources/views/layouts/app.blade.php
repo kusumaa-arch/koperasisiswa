@@ -74,26 +74,30 @@
             <img src="{{ asset('images/sekolah.png') }}" alt="" onerror="this.style.display='none'">
             <img src="{{ asset('images/kopsis.png') }}" alt="" onerror="this.style.display='none'">
             <div><strong>Koperasi Siswa Syariah</strong><br>SMK Negeri 1 Bantul</div>
+            
         </div>
 
         <div class="f-nav">
             <h6 data-id="Navigasi Singkat" data-en="Quick Navigation">Navigasi Singkat</h6>
             <div class="nav-links">
-                <a href="{{ route('home') }}" data-id="Beranda" data-en="Home">Beranda</a>
-                <a href="{{ route('about') }}" data-id="Tentang Kami" data-en="About Us">Tentang Kami</a>
-                <a href="{{ route('products') }}" data-id="Produk" data-en="Products">Produk</a>
-                <a href="{{ route('operational') }}" data-id="Operasional" data-en="Operational">Operasional</a>
-                <a href="#contact" data-id="Kontak" data-en="Contact">Kontak</a>
+                <a href="{{ route('home') }}" data-id="• Beranda" data-en="• Home"> • Beranda</a>
+                <a href="{{ route('about') }}" data-id="• Tentang Kami" data-en="• About Us"> • Tentang Kami</a>
+                <a href="{{ route('products') }}" data-id="• Produk" data-en="• Products"> • Produk</a>
+                <a href="{{ route('operational') }}" data-id="• Operasional" data-en="• Operational"> • Operasional</a>
+                <a href="#contact" data-id="• Kontak" data-en="• Contact"> • Kontak</a>
             </div>
         </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0493324861723!2d110.35305437358203!3d-7.889907978484305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7b00889ad8f84d%3A0x2e0009ca7815eaf0!2sSMK%20Negeri%201%20Bantul!5e0!3m2!1sen!2ssg!4v1793840713232!5m2!1sen!2ssg" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
 
     <div class="container footer-bottom">
         <small>© {{ date('Y') }} Ubu Ungi Team - RPL 1 angkatan 28</small>
         <div class="socials">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/kopsis_skansabasyariah/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
+
+    
 </footer>
 
 <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>

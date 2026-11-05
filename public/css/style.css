@@ -1065,10 +1065,11 @@ nav a.active::after {
    13. FOOTER
    ========================================================================== */
 .footer {
+    font-family: "Arial", sans-serif;
     padding: 50px 0 20px;
     background: linear-gradient(180deg, var(--green-800), var(--green-900));
     font-size: 14px;
-    color: #e6f1e8;
+    color: #6a816a;
 }
  
 .footer-grid {
@@ -1095,7 +1096,7 @@ nav a.active::after {
 .f-nav h6 {
     margin-bottom: 10px;
     font-size: 16px;
-    color: var(--gold-light);
+    color: #d4c468;
 }
  
 .f-nav div {
