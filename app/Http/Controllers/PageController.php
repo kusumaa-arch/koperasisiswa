@@ -79,13 +79,20 @@ class PageController extends Controller
 
             // Makanan ringan
             ['name' => 'Beng-Beng', 'name_en' => 'Beng-Beng Wafer', 'price' => 2500, 'cat' => 'makanan', 'img' => 'bengbeng.jpg'],
-
+            ['name' => 'Aoka', 'name_en' => 'Aoka', 'price' => 2500, 'cat' => 'makanan', 'img' => 'aoka.png'],
+            ['name' => 'Nabati', 'name_en' => 'Nabati', 'price' => 2000, 'cat' => 'makanan', 'img' => 'nabati.jpg'],
+            ['name' => 'Pillows', 'name_en' => 'Pillows', 'price' => 2500, 'cat' => 'makanan', 'img' => 'pillows.jpg'],
+            ['name' => 'Tic-Tic', 'name_en' => 'Tic-Tic', 'price' => 2000, 'cat' => 'makanan', 'img' => 'tictic.jpg'],
+            ['name' => 'French Fries', 'name_en' => 'French Fries', 'price' => 5000, 'cat' => 'makanan', 'img' => 'french.jpg'],
             // Minuman
             ['name' => 'Ultramilk 200ml', 'name_en' => 'Ultramilk 200ml', 'price' => 5000, 'cat' => 'minuman', 'img' => 'ultra200.jpg'],
             ['name' => 'Ultramilk 250ml', 'name_en' => 'Ultramilk 250ml', 'price' => 6500, 'cat' => 'minuman', 'img' => 'ultra250.png'],
             ['name' => 'Galon Kecil', 'name_en' => 'Small Water Gallon', 'price' => 15000, 'cat' => 'minuman', 'img' => 'galon.jpg'],
             ['name' => 'Le Minerale', 'name_en' => 'Le Minerale Mineral Water', 'price' => 3000, 'cat' => 'minuman', 'img' => 'leminerale.jpg'],
             ['name' => 'Teh Botol', 'name_en' => 'Bottled Tea', 'price' => 4000, 'cat' => 'minuman', 'img' => 'tehbotol.png'],
+            ['name' => 'Pocari Sweat', 'name_en' => 'Pocari Sweat', 'price' => 5000, 'cat' => 'minuman', 'img' => 'pocarisweat.jpg'],
+            ['name' => 'Mizone', 'name_en' => 'Mizone', 'price' => 5000, 'cat' => 'minuman', 'img' => 'mizone.jpg'],
+            ['name' => 'Nipis Madu', 'name_en' => 'Nipis Madu', 'price' => 5000, 'cat' => 'minuman', 'img' => 'nipismadu.jpg']
         ];
     }
 }

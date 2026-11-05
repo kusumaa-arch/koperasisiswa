@@ -31,10 +31,6 @@
             <div class="value"><span data-id="Mensejahterakan" data-en="Prosperous">Mensejahterakan</span></div>
         </div>
 
-        <button type="button" class="btn-back-top" data-scroll-top>
-            <i class="fa-solid fa-arrow-up"></i>
-            <span data-id="Kembali ke Atas" data-en="Back to Top">Kembali ke Atas</span>
-        </button>
     </div>
 </section>
 
